@@ -6,10 +6,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                dir('prg6.ex') {
                     bat 'mvn clean install'
                 }
             }
         }
     }
-}
+
