@@ -1,12 +1,14 @@
 pipeline {
     agent any
     tools {
-        maven 'MAVEN_HOME'   // Make sure this name matches what you configured in Jenkins (case-sensitive)
+        maven 'MAVEN_HOME'
     }
     stages {
         stage('Build') {
             steps {
-                bat 'mvn clean install'
+                dir('prg6.ex') {
+                    bat 'mvn clean install'
+                }
             }
         }
     }
